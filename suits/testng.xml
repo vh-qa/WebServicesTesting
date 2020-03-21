@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- TestNG configuration -->
+<suite name="Web Service Test Suite">
+    <test name="Users Tests Chrome" group-by-instances="true" preserve-order="true">
+        <parameter name="browser" value="chrome" />
+        <packages>
+            <package name="in.co.gorest.users" />
+        </packages>
+        <classes>
+            <class name="in.co.gorest.users.UsersTests" />
+        </classes>
+    </test>
+</suite>
