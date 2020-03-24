@@ -4,16 +4,18 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.ResponseSpecification;
 
-public class ResponseSpecificationFactory {
+public class ResponseSpecificationBuilder {
 
     public ResponseSpecification createResponseSpecification(HttpRequestMethods httpRequestMethods) {
         ResponseSpecification responseSpecification = null;
 
         String statusCode200 = Helper
-                .getProperty("/properties/common.properties", "status.code.200");
+                .getProperty(PropertyFiles.COMMON_PROPERTY.getPropertyFileName(),
+                             PropertyNames.STATUS_CODE_200.getPropertyName());
 
         String statusCode302 = Helper
-                .getProperty("/properties/common.properties", "status.code.302");
+                .getProperty(PropertyFiles.COMMON_PROPERTY.getPropertyFileName(),
+                             PropertyNames.STATUS_CODE_302.getPropertyName());
 
         switch (httpRequestMethods) {
             case POST:
