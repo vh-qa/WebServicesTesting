@@ -22,14 +22,14 @@ public class UsersTests implements ITestApiContract {
     private BaseTest baseTest;
     private String basePath;
 
-    String propertyFileName = PropertyFiles.USERS_PROPERTY.getPropertyFileName();
-    String userIdPropertyName = PropertyNames.USER_ID.getPropertyName();
-    String userUpdateEmailPropertyName = PropertyNames.USER_UPDATE_EMAIL.getPropertyName();
-    String jsonSchemaResponseUsersPropertyName = PropertyNames.JSON_SCHEMA_RESPONSE_USERS.getPropertyName();
+    private String propertyFileName = PropertyFiles.USERS_PROPERTY.getPropertyFileName();
+    private String userIdPropertyName = PropertyNames.USER_ID.getPropertyName();
+    private String userUpdateEmailPropertyName = PropertyNames.USER_UPDATE_EMAIL.getPropertyName();
+    private String jsonSchemaResponseUsersPropertyName = PropertyNames.JSON_SCHEMA_RESPONSE_USERS.getPropertyName();
 
-    String userId = Helper.getProperty(propertyFileName, userIdPropertyName);
-    String userUpdateEmail = Helper.getProperty(propertyFileName, userUpdateEmailPropertyName);
-    String jsonSchemaResponseUsers = Helper.getProperty(propertyFileName, jsonSchemaResponseUsersPropertyName);
+    private String userId = Helper.getProperty(propertyFileName, userIdPropertyName);
+    private String userUpdateEmail = Helper.getProperty(propertyFileName, userUpdateEmailPropertyName);
+    private String jsonSchemaResponseUsers = Helper.getProperty(propertyFileName, jsonSchemaResponseUsersPropertyName);
 
     @Override
     @Test(priority = 1, testName = "addUser", description = "POST")
