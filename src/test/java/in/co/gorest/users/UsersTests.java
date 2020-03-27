@@ -32,7 +32,7 @@ public class UsersTests implements ITestApiContract {
     private String jsonSchemaResponseUsers = Helper.getProperty(propertyFileName, jsonSchemaResponseUsersPropertyName);
 
     @Override
-    @Test(priority = 1, testName = "addUser", description = "POST")
+ //   @Test(priority = 1, testName = "addUser", description = "POST")
     public void add() {
         baseTest.initSpec(HttpRequestMethods.POST, basePath, null);
         List<UserModel> users = getUsersFromExcel();
@@ -67,7 +67,7 @@ public class UsersTests implements ITestApiContract {
     }
 
     @Override
-    @Test(priority = 2, testName = "getAllUsers", description = "GET all users")
+ //   @Test(priority = 2, testName = "getAllUsers", description = "GET all users")
     public void getAll() {
         baseTest.initSpec(HttpRequestMethods.GET, basePath, createQueryParams());
 
@@ -88,7 +88,7 @@ public class UsersTests implements ITestApiContract {
     }
 
     @Override
-    @Test(priority = 3, testName = "getUserById", description = "GET by userId")
+//    @Test(priority = 3, testName = "getUserById", description = "GET by userId")
     public void getById() {
         baseTest.initSpec(HttpRequestMethods.GET, basePath + "/" + userId, createQueryParams());
 
@@ -113,7 +113,7 @@ public class UsersTests implements ITestApiContract {
     }
 
     @Override
-    @Test(priority = 4, testName = "updateUser", description = "Update user info")
+ //   @Test(priority = 4, testName = "updateUser", description = "Update user info")
     public void update() {
         baseTest.initSpec(HttpRequestMethods.PUT, basePath, null);
 
@@ -133,7 +133,7 @@ public class UsersTests implements ITestApiContract {
     }
 
     @Override
-    @Test(priority = 5, testName = "deleteUser", description = "delete user")
+ //   @Test(priority = 5, testName = "deleteUser", description = "delete user")
     public void delete(){
         baseTest.initSpec(HttpRequestMethods.DELETE, basePath, null);
 
