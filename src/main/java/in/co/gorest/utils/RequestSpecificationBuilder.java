@@ -3,19 +3,26 @@ package in.co.gorest.utils;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+
 import java.util.Map;
 
-public class RequestSpecificationFactory {
+public class RequestSpecificationBuilder {
     private RequestSpecification requestSpecification;
 
     public RequestSpecification createRequestSpecification
             (HttpRequestMethods httpRequestMethods, String basePath, Map<String, String> queryParams) {
 
         String baseUri = Helper
-                .getProperty("/properties/common.properties", "base.uri");
+                            .getProperty(PropertyFiles.COMMON_PROPERTY.getPropertyFileName(),
+                                         PropertyNames.BASE_URI.getPropertyName());
 
-        String httpHeaderKey = Helper.getProperty("/properties/common.properties", "http.header.key");
-        String httpHeaderValue = Helper.getProperty("/properties/common.properties", "http.header.value");
+        String httpHeaderKey = Helper
+                                 .getProperty(PropertyFiles.COMMON_PROPERTY.getPropertyFileName(),
+                                              PropertyNames.HTTP_HEADER_KEY.getPropertyName());
+
+        String httpHeaderValue = Helper
+                                    .getProperty(PropertyFiles.COMMON_PROPERTY.getPropertyFileName(),
+                                                PropertyNames.HTTP_HEADER_VALUE.getPropertyName());
 
         switch (httpRequestMethods) {
             case GET:

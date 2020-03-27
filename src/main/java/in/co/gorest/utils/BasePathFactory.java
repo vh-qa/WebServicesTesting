@@ -7,23 +7,28 @@ public class BasePathFactory {
         switch (basePathEndPointType) {
             case USERS:
                 basePath = Helper
-                        .getProperty("/properties/common.properties", "base.path.users");
+                        .getProperty(PropertyFiles.COMMON_PROPERTY.getPropertyFileName(),
+                                     PropertyNames.BASE_PATH_USERS.getPropertyName());
                 break;
             case POSTS:
                 basePath = Helper
-                        .getProperty("/properties/common.properties", "base.path.posts");
+                        .getProperty(PropertyFiles.COMMON_PROPERTY.getPropertyFileName(),
+                                     PropertyNames.BASE_PATH_POSTS.getPropertyName());
                 break;
             case COMMENTS:
                 basePath = Helper
-                        .getProperty("/properties/common.properties", "base.path.comments");
+                        .getProperty(PropertyFiles.COMMON_PROPERTY.getPropertyFileName(),
+                                     PropertyNames.BASE_PATH_COMMENTS.getPropertyName());
                 break;
             case ALBUMS:
                 basePath = Helper
-                        .getProperty("/properties/common.properties", "base.path.albums");
+                        .getProperty(PropertyFiles.COMMON_PROPERTY.getPropertyFileName(),
+                                     PropertyNames.BASE_PATH_ALBUMS.getPropertyName());
                 break;
             case PHOTOS:
                 basePath = Helper
-                        .getProperty("/properties/common.properties", "base.path.photos");
+                        .getProperty(PropertyFiles.COMMON_PROPERTY.getPropertyFileName(),
+                                     PropertyNames.BASE_PATH_PHOTOS.getPropertyName());
                 break;
             default:
                 break;
